@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио | Начинающий разработчик</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Васильев Георгий</h1>
+    <nav>
+      <a href="#about">Обо мне</a>
+      <a href="#projects">Проекты</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- О себе -->
+    <section id="about">
+      <h2>О себе</h2>
+      <p>Привет! Я начинающий веб-разработчик. Стремлюсь создавать чистый и понятный код.</p>
+    </section>
+
+    <!-- Проекты (минимум 2 article) -->
+    <section id="projects">
+      <h2>Мои проекты</h2>
+      
+      <article>
+        <h3>Проект 1: Сайт-визитка</h3>
+        <p>Разработка адаптивного одностраничного сайта для вымышленного клиента с использованием современного семантического каркаса.</p>
+      </article>
+
+      <article>
+        <h3>Проект 2: Таск-трекер</h3>
+        <p>Простое приложение для управления задачами, написанное в рамках учебной практики с интеграцией JavaScript логики.</p>
+      </article>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section id="contact">
+      <h2>Связаться со мной</h2>
+      <form action="#" method="POST">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Сообщение</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Васильев Георгий. Обновлено: <span id="update-date"></span></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
