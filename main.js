@@ -16,3 +16,11 @@ navLinks.forEach(link => {
     link.classList.add("active");
   });
 });
+
+const burgerBtn = document.getElementById("burger-btn");
+const nav = document.querySelector("nav");
+
+burgerBtn.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+

@@ -15,7 +15,7 @@ body {
   line-height: 1.6;
   color: #222;
   background-color: #fafafa; 
-  padding-bottom: 40px;
+  position: relative;
 }
 
 header {
@@ -24,11 +24,20 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--color-primary);
-  color: white; /*  */
+  color: white; 
 }
 
 header h1 {
   font-size: 1.5rem;
+}
+
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 nav {
@@ -69,13 +78,12 @@ section h2 {
 
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem; /*  */
+  display: grid;
+  grid-template-columns: repeat(auto-fir, minmax(260px, 1fr));
+  gap: 1.5rem; 
 }
 
 .projects-grid article {
-  flex: 1 1 280px;
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
@@ -132,4 +140,25 @@ footer {
   background-color: var(--color-bg-light);
   color: #000000;
   margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--color-primary);
+    width: 100%;
+    padding: 1rem;
+  }
+
+  nav.open {
+    display: flex;
+  }
 }
