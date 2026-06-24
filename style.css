@@ -52,6 +52,10 @@ nav a {
   transition: color 0.2s ease; 
 }
 
+nav a:hover {
+  color: var(--color-accent);
+}
+
 
 nav a.active {
   text-decoration: underline;
@@ -76,6 +80,22 @@ section h2 {
   padding-bottom: 0.5rem;
 }
 
+.extra-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.extra-info.expanded {
+  max-height: 500px;
+}
+
+.extra-info p {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--color-bg-light);
+  border-radius: 6px;
+}
 
 .projects-grid {
   display: grid;
@@ -88,6 +108,22 @@ section h2 {
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-grid article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.projects-grid article:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.projects-grid article:nth-child(3) {
+  animation-delay: 0.3s;
 }
 
 .projects-grid article h3 {
@@ -119,7 +155,7 @@ form input, form textarea {
   font-family: inherit;
 }
 
-form button {
+button, form button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   background-color: var(--color-primary);
@@ -128,10 +164,15 @@ form button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-form button:hover {
+button:hover, form button:hover {
   background-color: #1e3a6d;
+}
+
+button:active, form button:active {
+  transform: scale(0.97);
 }
 
 footer {
@@ -140,6 +181,13 @@ footer {
   background-color: var(--color-bg-light);
   color: #000000;
   margin-top: 4rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20);
+  }
 }
 
 @media (max-width: 768px) {
