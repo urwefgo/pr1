@@ -1,3 +1,4 @@
+window.addEventListener("DOMContentLoaded", () => {
 const themeToggle = document.getElementById("theme-toggle");
 
 themeToggle.addEventListener("click", () => {
@@ -48,7 +49,7 @@ toggleBtn.addEventListener("click", () => {
 });
 
 const form = document.getElementById("contact-form");
-
+if (form) {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -79,4 +80,5 @@ form.addEventListener("submit", (event) => {
     form.reset();
   }
 });
-
+}
+});
