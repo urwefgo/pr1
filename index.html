@@ -36,17 +36,17 @@
     <section id="projects">
       <h2>Мои проекты</h2>
       
-      <div class="project-grid">
-      <article>
-        <h3>Проект 1: Сайт-визитка</h3>
-        <p>Разработка адаптивного одностраничного сайта для вымышленного клиента с использованием современного семантического каркаса.</p>
-      </article>
-
-      <article>
-        <h3>Проект 2: Таск-трекер</h3>
-        <p>Простое приложение для управления задачами, написанное в рамках учебной практики с интеграцией JavaScript логики.</p>
-      </article>
+      <div class="portfolio-controls">
+        <div class="filters">
+          <button data-filter="all" class="active">Все</button>
+          <button data-filter="frontend">Фронтед</button>
+          <button data-filter="backend">Бэкэнд</button>
+          <button data-filter="design">Дизайн</button>
+        </div>
+        <input type="text" id="search-input" placeholder="Поиск проекта...">
       </div>
+      
+      <div class="project-grid" id="project-container"></div>
     </section>
 
     <!-- Форма обратной связи -->
