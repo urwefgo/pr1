@@ -11,6 +11,8 @@
   <header>
     <h1>Васильев Георгий</h1>
 
+    <button id="theme-toggle" aria-label="Переключить тему">🌙</button>
+
     <button class="burger" id="burger-btn" aria-label="Открыть меню" > ☰ </button>
     <nav>
       <a href="#about">Обо мне</a>
@@ -50,19 +52,22 @@
     <!-- Форма обратной связи -->
     <section id="contact">
       <h2>Связаться со мной</h2>
-      <form action="#" method="POST">
+      <form id="contacn-form">
         <label for="name">Имя</label>
-        <input type="text" id="name" name="name" required>
-
+        <input type="text" id="name" name="name">
+        <span class="error" id="name-error"></span>
+      
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="text" id="email" name="email">
+        <span class="error" id="email-error"></span>
 
         <label for="message">Сообщение</label>
-        <textarea id="message" name="message" rows="5"></textarea>
+        <textarea id ="message" name="message" rows="5"></textarea>
 
         <button type="submit">Отправить</button>
       </form>
     </section>
+    
   </main>
 
   <footer>

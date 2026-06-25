@@ -1,3 +1,16 @@
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+  const isDark = document.body.classList.contains("dark-theme");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-theme");
+}
+
 console.log("Привет! Скрипт подключен и работает.");
 
 // Поиск элемента по ID и вывод текущей даты
@@ -32,5 +45,38 @@ toggleBtn.addEventListener("click", () => {
   toggleBtn.textContent = extraInfo.classList.contains("expanded")
     ? "Скрыть"
     : "Показать больше";
+});
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const nameError = document.getElementById("name-error");
+  const emailError = document.getElementById("email-error");
+
+  let isValid = true;
+
+  if (nameInput.value.trim() === "") {
+    nameError.textContent = "Введите имя";
+    isValid = false;
+  } else {
+    nameError.textContent = "";
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(emailInput.value.trim())) {
+    emailError.textContent = "Введите корректный email";
+    isValid = false;
+  } else {
+    emailError.textContent = "";
+  }
+
+  if (isValid) {
+    alert("Форма заполнена верно! (отправка на сервер не настроена)");
+    form.reset();
+  }
 });
 

@@ -8,6 +8,9 @@
   --color-primary: #2e5395;
   --color-accent: #f2a154;
   --color-bg-light: #eaf1fb; 
+  --color-bg-main: #fafafa;
+  --color-text: #222;
+  --color-card-bg: white;
 }
 
 body {
@@ -16,6 +19,17 @@ body {
   color: #222;
   background-color: #fafafa; 
   position: relative;
+  color: var(--color-text);
+  background-color: var(--color-bg-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+  --color-primary: #c0c0c0;
+  --color-bg-light: #2a2a2a;
+  --color-bg-main: #1a1a1a;
+  --color-text: #eaeaea;
+  --color-card-bg: #2a2a2a;
 }
 
 header {
@@ -209,4 +223,12 @@ footer {
   nav.open {
     display: flex;
   }
+}
+
+.error {
+  display: block;
+  color: #d33;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  margin-top: 0.25rem;
 }
